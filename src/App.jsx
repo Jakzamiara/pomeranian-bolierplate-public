@@ -1,12 +1,12 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
+import React from "react";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
-import { NotFound } from './App/Components/NotFound/NotFound';
+import { NotFound } from "./App/Components/NotFound/NotFound";
 
-import { Blocks } from './App/Blocks';
-import { Layout } from './App/Layout';
-import { Dashboard } from './App/Dashboard';
-import { Exercises } from './App/Exercises';
+import { Blocks } from "./App/Blocks";
+import { Layout } from "./App/Layout";
+import { Dashboard } from "./App/Dashboard";
+import { Exercises } from "./App/Exercises";
 
 export function App() {
   return (

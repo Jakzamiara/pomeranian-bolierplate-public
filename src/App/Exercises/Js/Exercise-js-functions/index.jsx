@@ -1,6 +1,14 @@
 import './styles.css';
 
 export function Exercise() {
+  const animal = {
+    breed: 'Elephant',
+    age: 20,
+    color: 'Green',
+  }
+  animal.age = 12
+  console.log(animal.age)
+
   function multiply(num1, num2) {
     return num1 * num2;
   }
@@ -8,7 +16,6 @@ export function Exercise() {
   function getWelcomeMessage(name, amount) {
     return `Witaj ${name}! Jesteś ${amount} uzytkownikiem odwiedzającym tę stronę!`;
   }
-
   return (
     <div>
       <p>Definiowanie funkcji</p>
@@ -36,3 +43,10 @@ export function Exercise() {
     </div>
   );
 }
+const person = {
+  firstName: "Jakub",
+  lastName: "Zamiara",
+  eyesColor: "blue",
+  sayHello: function() { console.log('Hello')}
+}
+console.log(person)

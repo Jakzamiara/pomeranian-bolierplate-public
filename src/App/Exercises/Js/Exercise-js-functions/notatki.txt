@@ -1,0 +1,84 @@
+//var declaration is not a good practise.
+    var integar = 1; //integer/number
+    var string = "1"; //stringing
+    var array = []; //array
+    var object = {}; //object
+    const null = null;
+
+    console.log(typeof string);
+
+    
+    
+    function Statement() {
+        const one = 1
+        const two = 2
+        return one+two;
+    }
+
+
+
+//Var oddaje walkowerem nie powinnismy ich stosowac. 
+    var thatSucks = 1;
+    thatSucks = 123123123123
+    console.log(thatSucks);
+
+//Const nie pozwala nam oddac wartosci.
+    const thatsgood = 1;
+    thatsgood = 12312313123131
+    console.log(thatsgood)
+
+//Fukcja Hej która mnoży 7 i 14 z czego 7=pa 14=ta return [pa * ta] zwraca wartość danej funkcji. Hej() wywołują ją odrazu bez potrzeby wpisywania Hej() w konsoli.
+    function Hej() {
+        const pa = 7
+        const ta = 14
+        return pa * ta;
+    };
+    Hej ();
+
+    
+    
+    function example2() {
+        if (true) {
+            let xx = 10;
+        }
+        console.log("What you returned ",xx);
+        }
+    example2();
+    
+
+    
+        const string1 = "abc ";
+        const string2 = " cde";
+
+        string1 + string2
+
+        const sklejonaZmienna = "testsetses" + string2; //string + zmiena
+        console.log(sklejonaZmienna);
+
+        
+        
+    function decrementation(test1, test2) {
+            return test1 - test2;
+         }
+         decrementation("werewr","ewrwer"); //incorrect values 
+
+        
+         let x;
+         console.log(x); // undefined kiedy zmienna nie ma swojej wartosci inicjalnie
+         
+          
+         
+         let obj = {}; 
+         console.log(obj.nonExistentProperty); //undefined kiedy odowlujemy sie do włąściowsci obiektu która nie istnieje 
+
+
+
+
+
+         const person = {
+            firstName: "Jakub",
+            lastName: "Zamiara",
+            eyesColor: "blue",
+            sayHello: function() { console.log('Hello')}
+         }
+
