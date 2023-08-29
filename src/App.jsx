@@ -9,6 +9,7 @@ import { Exercises } from "./App/Exercises";
 import { CV } from "./App/Components/CV/CV";
 import { Kalendarz } from "./App/Components/Kalendarz/Kalendarz";
 import { ReactOnClick } from "./App/Exercises/ReactExercises/ReactOnClick/ReactOnClick";
+import { Blog } from "./App/Blog/Blog";
 
 export function App() {
   return (
@@ -23,6 +24,7 @@ export function App() {
           <Route path="cv/*" element={<CV />} />
           <Route path="Kalendarz/*" element={<Kalendarz />} />
           <Route path="ReactOnClick/*" element={<ReactOnClick />} />
+          <Route path="Blog/*" element={<Blog />} />
         </Route>
       </Routes>
     </BrowserRouter>
