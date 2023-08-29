@@ -24,7 +24,7 @@ export function App() {
           <Route path="cv/*" element={<CV />} />
           <Route path="Kalendarz/*" element={<Kalendarz />} />
           <Route path="ReactOnClick/*" element={<ReactOnClick />} />
-          <Route path="Blog/*" element={<Blog />} />
+          <Route path="blog/*" element={<Blog />} />
         </Route>
       </Routes>
     </BrowserRouter>
