@@ -1,0 +1,19 @@
+
+h2 {
+  font-size: 20px;
+}
+.colorName {
+  color: red;
+}
+.shortenHex {
+  color: #f00;
+}
+.hex {
+  color: #f00321;
+}
+.rgb {
+  color: rgb(255, 0, 0);
+}
+.rgba {
+  color: rgba(255, 0, 0, 1)
+}
