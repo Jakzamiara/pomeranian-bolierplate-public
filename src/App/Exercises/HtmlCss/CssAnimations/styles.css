@@ -1,0 +1,74 @@
+.Masz {
+    margin: 25px 0px 0px 40px;
+    background-color: rgb(33, 163, 42);
+    width: 500px; 
+    height: 260px;
+    font-family: 'Caprasimo', cursive;
+    animation-name: masz;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  .Pytanie {
+    margin: 10px 0px 0px 25px;
+    font-weight: bold;
+    animation-name: pytanie;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  .Masz h2 {
+    color: black;
+    margin: 3px 0px 0px 25px;
+  }
+  .Ele {
+    margin: 40px 0px 0px 25px;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .Spec {
+    margin: 7px 0px 0px 25px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: rgb(162, 0, 0);
+    font-weight: bold;
+    animation-name: spec;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  .Mail {
+    margin: 15px 0px 0px 25px;
+    font-size: 17px;
+  }
+  .Numer {
+    margin: 8px 0px 0px 25px;
+    font-size: 17px;
+    animation-name: numer;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes pytanie{
+    0% {color: red;}
+    25% {color: yellow;}
+    50% {color: blue;}
+    100% {color: green;}
+}
+
+@keyframes spec{
+    0% {color: red;}
+    25% {color: red; font-size: larger;}
+    50% {color: rgb(0, 0, 0); font-size: larger;}
+    100% {color: rgb(218, 28, 186); font-size: xx-large;}
+}
+
+@keyframes numer{
+    0% {text-align: left;}
+    25% {text-align: center;}
+    50% {text-align: right;}
+    75% {padding-top: 100px;}
+}
+@keyframes masz{
+    25% {padding-top: 100px;}
+    50% {padding-top: 150px;}
+    75% {padding-top: 200px;}
+    100% {padding-top: 250px;}
+}

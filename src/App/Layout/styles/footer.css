@@ -3,7 +3,7 @@ footer {
   background-color: #000;
   display: grid;
   grid-template-columns: 1fr 270px;
-  position: relative;
+  position: bottom;
   padding: 18px;
 }
 
