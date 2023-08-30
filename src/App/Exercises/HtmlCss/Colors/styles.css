@@ -17,3 +17,12 @@ h2 {
 .rgba {
   color: rgba(255, 0, 0, 1)
 }
+.opacity {
+  background-color: greenyellow;
+  padding: 20px;
+  opacity: 0.3;
+}
+.rgbaopacity {
+  background-color: rgba(1, 21, 60, 10%);
+  padding: 20px;
+}
