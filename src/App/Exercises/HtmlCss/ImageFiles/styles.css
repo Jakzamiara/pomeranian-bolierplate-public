@@ -1,0 +1,7 @@
+.images {
+  background-color: green;
+}
+
+.images img{
+  max-width: 200px;
+}
