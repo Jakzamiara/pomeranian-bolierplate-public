@@ -1,7 +1,7 @@
 import "./styles.css";
 import logo from "./logo.png";
 import pic from "./pic.png";
-import { RoundImage } from "../../../Components/RoundImage/RoundImage.jsx";
+import { RoundImage } from "../../../Components/RoundImage/RoundImage";
 
 export const ImageFiles = () => {
   return (
