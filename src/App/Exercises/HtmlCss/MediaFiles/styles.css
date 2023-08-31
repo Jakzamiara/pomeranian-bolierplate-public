@@ -1,0 +1,12 @@
+.mov {
+    max-width: 270px;
+    padding-top: 20px;
+    background-color: black;
+}
+.yt {
+    max-width: 200px;
+    padding-top: 20px;
+}
+.aud {
+    padding-top: 20px;
+}
