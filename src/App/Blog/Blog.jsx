@@ -9,8 +9,8 @@ export const Blog = () => {
     <div className="page">
       <div className="first">
         <div className="frame">
-          <img src={bell} className="bell" />
           <div className="firstt">
+            <img src={bell} className="bell" alt="bell" />
             <spam className="dateone">30-11-2022</spam>
             <h1 className="title-one">
               Why are we so nostalgic for the 1990s?
