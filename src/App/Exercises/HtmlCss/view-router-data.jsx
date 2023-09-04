@@ -9,6 +9,8 @@ import { TextFundamentsRouterMetaData } from "./TextFundaments/router-data";
 import { BackgroundsRouterMetaData } from "./Backgrounds/router-data";
 import { MediaFilesRouterMetaData } from "./MediaFiles/router-data";
 import { BoxModelRouterMetaData } from "./BoxModel/router-data";
+import { TableRouterMetaData } from "./Table/router-data";
+import { TableTennisRouterMetaData } from "./TableTennis/router-data";
 
 export const blockRouterMetaData = [
   blockRouterMetaData121220231,
@@ -21,5 +23,7 @@ export const blockRouterMetaData = [
   BackgroundsRouterMetaData,
   MediaFilesRouterMetaData,
   BoxModelRouterMetaData,
+  TableRouterMetaData,
+  TableTennisRouterMetaData,
 ];
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
