@@ -8,6 +8,7 @@ import { PersonalCardIcon } from "../Components/Icons/PersonalCardIcon";
 
 import "./styles/aside.css";
 import { Faq } from "../Components/Icons/Faq";
+import { TechStack } from "../TechStack/TechStack";
 
 export function AppAside() {
   return (
@@ -41,6 +42,10 @@ export function AppAside() {
           <li className="aside-row">
             <Faq />
             <NavLink to="Faq">FAQ</NavLink>
+          </li>
+          <li className="aside-row">
+            <Faq />
+            <NavLink to="TechStack">TechStack</NavLink>
           </li>
         </ul>
       </nav>

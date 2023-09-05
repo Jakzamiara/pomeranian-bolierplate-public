@@ -11,6 +11,7 @@ import { Kalendarz } from "./App/Components/Kalendarz/Kalendarz";
 import { ReactOnClick } from "./App/Exercises/ReactExercises/ReactOnClick/ReactOnClick";
 import { Blog } from "./App/Blog/Blog";
 import { Faq } from "./App/Faq/Faq";
+import { TechStack } from "./App/TechStack/TechStack";
 
 export function App() {
   return (
@@ -27,6 +28,7 @@ export function App() {
           <Route path="ReactOnClick/*" element={<ReactOnClick />} />
           <Route path="blog/*" element={<Blog />} />
           <Route path="Faq/*" element={<Faq />} />
+          <Route path="TechStack/*" element={<TechStack />} />
         </Route>
       </Routes>
     </BrowserRouter>

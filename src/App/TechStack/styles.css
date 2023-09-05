@@ -1,0 +1,26 @@
+.techstack {
+    margin-left: 50px;
+}
+.text {
+    color: var(--secondary-secondary, #23213D);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px; 
+    padding-bottom: 55px;
+}
+.grid-container {
+    display: grid;
+    grid-template-rows: repeat(3, 160px);
+    grid-template-columns: repeat(6, 120px); 
+    gap: 55px 100px; 
+  }
+  
+  .grid-cell {
+    text-align: center; 
+    padding: 5px; 
+  }
+
+  
