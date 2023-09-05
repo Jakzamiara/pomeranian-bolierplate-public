@@ -17,3 +17,8 @@ header.header-title {
   color: var(--color-grey);
   font-weight: normal;
 }
+.Iconn {
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}

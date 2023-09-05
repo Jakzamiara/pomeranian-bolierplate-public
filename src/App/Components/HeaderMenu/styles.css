@@ -1,0 +1,45 @@
+
+.pic {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(2, 1, 1);
+    border-radius: 50%;
+    background-position: cover;
+}
+.right-side {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+.arrow {
+    width: 20px;
+height: 20px;
+flex-shrink: 0;
+padding-right: 43px;
+}
+.nameandsurname {
+    padding-right: 24px;
+    padding-left: 23px;
+}
+.name {
+    margin-top: 39px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal
+}
+.surname {
+    color: var(--gray-500, #999);
+font-family: Poppins;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 32px;
+}
+.icon {
+    padding-right: 13px;
+}

@@ -1,0 +1,14 @@
+.logo {
+    height: 40px;
+    pointer-events: none;
+}
+.right-side {
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+.Icon {
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
