@@ -1,15 +1,16 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-import { AppHeader } from './AppHeader';
-import { AppFooter } from './AppFooter';
-import { ErrorBoundary } from './ErrorBoundary';
+import { AppHeader } from "./AppHeader";
+import { AppFooter } from "./AppFooter";
+import { ErrorBoundary } from "./ErrorBoundary";
 
-import './styles/layout.css';
-import { AppAside } from './AppAside';
+import "./styles/layout.css";
+import { AppAside } from "./AppAside";
+import { CookiesBanner } from "../Components/CookiesBanner.jsx/CookiesBanner";
 
 function getLayoutClassName(withSidebar) {
-  return withSidebar ? 'layout with-sidebar' : 'layout';
+  return withSidebar ? "layout with-sidebar" : "layout";
 }
 
 export const Layout = ({ withSidebar }) => {
@@ -22,6 +23,7 @@ export const Layout = ({ withSidebar }) => {
           <Outlet />
         </main>
         <AppFooter />
+        <CookiesBanner />
       </div>
     </ErrorBoundary>
   );
