@@ -1,5 +1,6 @@
 import "./styles.css";
 
 export const Math = () => {
-  return;
+  const myNumber = 12.123;
+  return <div>hej</div>;
 };
