@@ -49,7 +49,7 @@ export const JsNumbersTraining = () => {
   const stringIsShort = isStringShort(sampleString);
   console.log(stringIsShort);
 
-  const grade = 3;
+  const grade = 6;
   console.log(`Ocena: ${grade} - ${convertGrade(grade)}`);
 
   return <div>{Math.random()}</div>;
