@@ -1,4 +1,3 @@
-import { FortTwoTone } from "@mui/icons-material";
 import "./styles.css";
 
 export const FunctionTable = () => {
@@ -22,8 +21,6 @@ export const FunctionTable = () => {
       }
       array2d.push(row);
     }
-
-    return array2d;
   }
 
   // Przykłady użycia:
@@ -31,5 +28,19 @@ export const FunctionTable = () => {
   console.log(result1); // Powinno wypisać: [[0]]
 
   const result2 = create2dArray(1, 2);
-  console.log(result2); // Powinno wypisać: [[0, 0]]
+  console.log(result2); // Powinno wypisać: [[0, 0]]a
 };
+// Zadanie 1: Filtruj parzyste liczby
+// zastosuj filter
+// Zadanie 2: Podwój każdy element tablicy
+function doubleElements(array) {
+  const newArray = [];
+  array.map((x) => newArray.push(x, x));
+  return newArray;
+}
+console.log("doubleElements", doubleElements([1, 2, 3]));
+// zastosuj map
+// Zadanie 3: Znajdź najdłuższy wyraz
+// zastosuj reduce (w reduce stwórz if'a na sprawdzenie czy obecny wyraz jest "dłuższy"  od porównywanego)
+// Zadanie 4:  Oblicz sumę liczb parzystych
+// zastosuj reduce
