@@ -15,7 +15,7 @@
     display: grid;
     grid-template-rows: repeat(3, 160px);
     grid-template-columns: repeat(6, 120px); 
-    gap: 55px 100px; 
+    gap: 55px 133px; 
   }
   
   .grid-cell {
