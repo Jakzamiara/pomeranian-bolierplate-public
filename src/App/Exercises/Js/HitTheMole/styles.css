@@ -137,14 +137,20 @@ hr {
     flex-shrink: 0;
     border-radius: 8px;
     background: var(--gray-200, #EBEBEB);
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
 }
+
+
 .centered-mole {
     display: flex;
-    align-content: center;
+    justify-content: center;
     align-items: center;
-}
+    height: 100%;
+  }
+  
+
 .green-background {
     background-color: green;
 }

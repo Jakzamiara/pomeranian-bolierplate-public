@@ -1,17 +1,30 @@
 import React, { useState } from "react";
 
-export function MenuView({ startGame, handleStartClick }) {
+export function MenuView({
+  startGame,
+  handleStartClick,
+  handleTimeSelection,
+  handleMoleSelection,
+}) {
+  // Stan przycisku wyboru czasu
   const [timeButton, setTimeButton] = useState(null);
-  const [moleButton, setMoleButton] = useState(null);
 
-  const handleTimeClick = (event) => {
-    console.log(event.target.id);
-    setTimeButton(event.target.id);
+  // Obsługa kliknięcia przycisku czasu
+  const handleTimeClick = (time) => {
+    // Ustaw wybrany czas i przekaż go do funkcji handleStartClick
+    handleTimeSelection(time);
+    setTimeButton(time);
   };
 
+  // Stan przycisku wyboru liczby kretych
+  const [moleButton, setMoleButton] = useState(null);
+
+  // Obsługa kliknięcia przycisku wyboru liczby kretych
   const handleMoleClick = (event) => {
     console.log(event.target.id);
     setMoleButton(event.target.id);
+    // Przekazanie wybranej liczby kretych do funkcji handleMoleSelection
+    handleMoleSelection(event.target.id);
   };
 
   return (
@@ -26,30 +39,30 @@ export function MenuView({ startGame, handleStartClick }) {
           <div className="button-row">
             <button
               id={1}
-              onClick={handleTimeClick}
-              className={timeButton === "1" ? "smallButton" : "bigButton"}
+              onClick={() => handleTimeClick(1)}
+              className={timeButton === 1 ? "smallButton" : "bigButton"}
               style={{
-                backgroundColor: timeButton === "1" ? "#FE3756" : "",
+                backgroundColor: timeButton === 1 ? "#FE3756" : "",
               }}
             >
               1 minuta
             </button>
             <button
               id={2}
-              onClick={handleTimeClick}
-              className={timeButton === "2" ? "smallButton" : "bigButton"}
+              onClick={() => handleTimeClick(2)}
+              className={timeButton === 2 ? "smallButton" : "bigButton"}
               style={{
-                backgroundColor: timeButton === "2" ? "#FE3756" : "",
+                backgroundColor: timeButton === 2 ? "#FE3756" : "",
               }}
             >
               2 minuty
             </button>
             <button
               id={3}
-              onClick={handleTimeClick}
-              className={timeButton === "3" ? "smallButton" : "bigButton"}
+              onClick={() => handleTimeClick(3)}
+              className={timeButton === 3 ? "smallButton" : "bigButton"}
               style={{
-                backgroundColor: timeButton === "3" ? "#FE3756" : "",
+                backgroundColor: timeButton === 3 ? "#FE3756" : "",
               }}
             >
               3 minuty
@@ -104,7 +117,7 @@ export function MenuView({ startGame, handleStartClick }) {
           <div className="control-button">
             <button
               className="start-button"
-              onClick={handleStartClick}
+              onClick={() => handleStartClick(timeButton)}
               disabled={startGame}
             >
               START
