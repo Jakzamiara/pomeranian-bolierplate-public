@@ -1,20 +1,28 @@
 import React, { useState } from "react";
 
 export function MenuView({ startGame, handleStartClick, handleTimeSelection }) {
+  // Lokalny stan przechowujący aktualnie wybrany czas gry.
   const [timeButton, setTimeButton] = useState(null);
+
+  // Lokalny stan przechowujący aktualnie wybraną liczbę kretyków.
   const [moleButtonId, setMoleButtonId] = useState(null);
+
+  // Lokalny stan przechowujący aktualnie wybraną liczbę kretyków.
   const [selectedMoles, setSelectedMoles] = useState(null);
 
+  // Obsługuje kliknięcie przycisku czasu gry.
   const handleTimeClick = (time) => {
     handleTimeSelection(time);
     setTimeButton(time);
   };
 
+  // Obsługuje kliknięcie przycisku wyboru liczby kretyków.
   const handleMoleClick = (event) => {
     setMoleButtonId(event.target.id);
     setSelectedMoles(parseInt(event.target.id));
   };
 
+  // Zwraca zawartość komponentu MenuView.
   return (
     <div className="container">
       <div className="gridbox">
@@ -99,6 +107,7 @@ export function MenuView({ startGame, handleStartClick, handleTimeSelection }) {
         <div className="control">
           <div className="control-text">PRZYCISKI STREUJĄCE</div>
           <div className="control-button">
+            {/* Obsługuje kliknięcie przycisku "START". */}
             <button
               className="start-button"
               onClick={() => {

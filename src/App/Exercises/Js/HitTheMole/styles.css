@@ -98,7 +98,7 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 50px;
+    flex-wrap: nowrap;
 }
 .time-time, .result, .start-start {
     display: flex;
@@ -116,13 +116,18 @@ button {
     margin-left: 130px;
 }
 
+.game-view {
+    margin-top: 100px;
+}
 .result {
-    margin-left: 210px !important;
+    margin-left: 260px !important;
+}
+.time-time {
+    margin-left: 180px !important;
 }
 hr {
     max-width: 500px;
     margin: 25px 0;
-    margin-left: 50px;
 }
 .start-start {
     background-color: red !important;   
@@ -133,7 +138,7 @@ hr {
     grid-template-columns: repeat(5, 102px); 
     align-items: center;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 100px;
     gap: 9px 9px;
 }
 .grid-game-cell {
