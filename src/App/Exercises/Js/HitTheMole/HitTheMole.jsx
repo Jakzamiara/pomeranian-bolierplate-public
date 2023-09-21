@@ -1,52 +1,47 @@
-import React, { useState } from "react";
-import "./styles.css";
-import { MenuView } from "./MenuView";
+import React, { useState, useEffect } from "react";
 import { GameView } from "./GameView";
+import { MenuView } from "./MenuView";
 
 export const HitTheMole = () => {
-  // Stan gry
   const [startGame, setStartGame] = useState(false);
-  // Wybrany czas gry
   const [selectedTime, setSelectedTime] = useState(null);
-  // Pozostały czas gry
+  const [selectedMoles, setSelectedMoles] = useState(null);
   const [timeLeft, setTimeLeft] = useState(0);
 
-  // Obsługa kliknięcia przycisku "START"
-  const handleStartClick = (time) => {
+  const handleStartClick = (time, moles) => {
     setSelectedTime(time);
+    setSelectedMoles(moles);
     setStartGame(true);
 
-    // Rozpocznij odliczanie czasu
     setTimeLeft(time * 60);
 
-    // Ustaw timer
     const timerInterval = setInterval(() => {
       if (timeLeft > 0) {
         setTimeLeft(timeLeft - 1);
       } else {
-        // Zakończ grę po upływie czasu
         clearInterval(timerInterval);
         setStartGame(false);
       }
     }, 1000);
   };
 
-  // Obsługa powrotu do menu
   const handleReturnToMenu = () => {
     setStartGame(false);
   };
 
   return (
     <div className="hit-the-mole">
+      <p className="header">
+        Gra polegająca na podążaniu za krecikiem i trafianiu na kwadrat, w
+        którym się pojawił.
+      </p>
       {startGame ? (
-        // Wyświetl widok gry
         <GameView
           selectedTime={selectedTime}
           handleReturnToMenu={handleReturnToMenu}
-          timeLeft={timeLeft}
+          selectedMoles={selectedMoles}
         />
       ) : (
-        // Wyświetl widok menu
         <MenuView
           startGame={startGame}
           handleStartClick={handleStartClick}

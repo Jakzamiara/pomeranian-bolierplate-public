@@ -1,39 +1,23 @@
 import React, { useState } from "react";
 
-export function MenuView({
-  startGame,
-  handleStartClick,
-  handleTimeSelection,
-  handleMoleSelection,
-}) {
-  // Stan przycisku wyboru czasu
+export function MenuView({ startGame, handleStartClick, handleTimeSelection }) {
   const [timeButton, setTimeButton] = useState(null);
+  const [moleButtonId, setMoleButtonId] = useState(null);
+  const [selectedMoles, setSelectedMoles] = useState(null);
 
-  // Obsługa kliknięcia przycisku czasu
   const handleTimeClick = (time) => {
-    // Ustaw wybrany czas i przekaż go do funkcji handleStartClick
     handleTimeSelection(time);
     setTimeButton(time);
   };
 
-  // Stan przycisku wyboru liczby kretych
-  const [moleButton, setMoleButton] = useState(null);
-
-  // Obsługa kliknięcia przycisku wyboru liczby kretych
   const handleMoleClick = (event) => {
-    console.log(event.target.id);
-    setMoleButton(event.target.id);
-    // Przekazanie wybranej liczby kretych do funkcji handleMoleSelection
-    handleMoleSelection(event.target.id);
+    setMoleButtonId(event.target.id);
+    setSelectedMoles(parseInt(event.target.id));
   };
 
   return (
     <div className="container">
       <div className="gridbox">
-        <p className="header">
-          Gra polegająca na podążaniu za krecikiem i trafianiu na kwadrat, w
-          którym się pojawił.
-        </p>
         <div className="box">
           <div className="text-row">CZAS GRY</div>
           <div className="button-row">
@@ -74,37 +58,37 @@ export function MenuView({
           <div className="margin-mole">LICZBA KRETÓW</div>
           <div className="button-general">
             <button
-              id={4}
+              id="1"
               onClick={handleMoleClick}
               className={
-                moleButton === "1" ? "small-button-selected" : "small-button"
+                moleButtonId === "1" ? "small-button-selected" : "small-button"
               }
               style={{
-                backgroundColor: moleButton === "4" ? "#FE3756" : "",
+                backgroundColor: moleButtonId === "1" ? "#FE3756" : "",
               }}
             >
               1 kret
             </button>
             <button
-              id={5}
+              id="2"
               onClick={handleMoleClick}
               className={
-                moleButton === "2" ? "small-button-selected" : "small-button"
+                moleButtonId === "2" ? "small-button-selected" : "small-button"
               }
               style={{
-                backgroundColor: moleButton === "5" ? "#FE3756" : "",
+                backgroundColor: moleButtonId === "2" ? "#FE3756" : "",
               }}
             >
               2 krety
             </button>
             <button
-              id={6}
+              id="3"
               onClick={handleMoleClick}
               className={
-                moleButton === "3" ? "small-button-selected" : "small-button"
+                moleButtonId === "3" ? "small-button-selected" : "small-button"
               }
               style={{
-                backgroundColor: moleButton === "6" ? "#FE3756" : "",
+                backgroundColor: moleButtonId === "3" ? "#FE3756" : "",
               }}
             >
               3 krety
@@ -117,8 +101,12 @@ export function MenuView({
           <div className="control-button">
             <button
               className="start-button"
-              onClick={() => handleStartClick(timeButton)}
-              disabled={startGame}
+              onClick={() => {
+                if (selectedMoles) {
+                  handleStartClick(timeButton, selectedMoles);
+                }
+              }}
+              disabled={startGame || !selectedMoles}
             >
               START
             </button>

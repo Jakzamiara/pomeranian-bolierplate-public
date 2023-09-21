@@ -1,3 +1,8 @@
+.header {
+    font-weight: 500;
+    font-size: 27px;
+    margin-bottom: 30px;
+}
 .box {
     display: flex;
     padding-top: 100px;
@@ -87,7 +92,7 @@ button {
     display: flex;
     align-items: center;
     align-content: center;
-    margin-left: 74px;
+    margin-left: 84px;
 }
 .time-to-end, .result-result, .start-control {
     display: flex;
