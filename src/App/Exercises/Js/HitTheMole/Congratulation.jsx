@@ -7,9 +7,11 @@ export const CongratulationView = ({
   moles,
   handleRestartGame,
   handleTimeSelection,
+  handleResetGame, // Dodaj tę prop
 }) => {
   const handleRestartClick = () => {
     handleRestartGame();
+    handleResetGame(); // Wywołaj funkcję resetowania stanu gry
   };
 
   return (

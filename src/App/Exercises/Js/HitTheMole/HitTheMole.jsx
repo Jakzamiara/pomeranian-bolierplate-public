@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GameView } from "./GameView";
 import { MenuView } from "./MenuView";
+import { CongratulationView } from "./Congratulation"; // Dodaj import CongratulationView
 
 export const HitTheMole = () => {
   // Lokalny stan przechowujący informację o rozpoczęciu gry.
@@ -11,6 +12,7 @@ export const HitTheMole = () => {
 
   // Lokalny stan przechowujący wybraną liczbę kretyków.
   const [selectedMoles, setSelectedMoles] = useState(null);
+  const [clickCount, setClickCount] = useState(0);
 
   // Lokalny stan przechowujący pozostały czas gry.
   const [timeLeft, setTimeLeft] = useState(0);
@@ -52,13 +54,14 @@ export const HitTheMole = () => {
           selectedTime={selectedTime}
           handleReturnToMenu={handleReturnToMenu}
           selectedMoles={selectedMoles}
+          handleTimeSelection={(time) => setSelectedTime(time)}
         />
       ) : (
         // Renderuje komponent MenuView, jeśli gra nie jest rozpoczęta.
         <MenuView
           startGame={startGame}
           handleStartClick={handleStartClick}
-          handleTimeSelection={(time) => setSelectedTime(time)}
+          handleTimeSelection={(time) => setSelectedTime(time)} // Dodaj tę linię
         />
       )}
     </div>

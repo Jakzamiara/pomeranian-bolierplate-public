@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { MoleIcon } from "./moleicon";
 import { CongratulationView } from "./Congratulation";
-import { MenuView } from "./MenuView";
 
 export const GameView = ({
   selectedTime,
   handleReturnToMenu,
   selectedMoles,
+  handleTimeSelection,
 }) => {
   const generateRandomPosition = (numMoles) => {
     const positions = Array(10).fill(false);
@@ -53,6 +53,18 @@ export const GameView = ({
     } else {
       endGame();
     }
+  };
+  const handleResetGame = () => {
+    setClickCount(0);
+    setMolePositions(
+      Array(10)
+        .fill(false)
+        .map(() => generateRandomPosition(selectedMoles))
+    );
+    setIsGameRunning(false);
+    setStopButtonLabel("START");
+    setCellClicked(Array(10).fill(false));
+    setRemainingTime(selectedTime * 60);
   };
 
   const handleMoleClick = (index) => {
@@ -136,6 +148,8 @@ export const GameView = ({
           time={selectedTime}
           moles={selectedMoles}
           handleRestartGame={() => setShowCongratulation(false)}
+          handleTimeSelection={handleTimeSelection}
+          handleResetGame={handleResetGame} // Przekazanie handleTimeSelection jako prop
         />
       ) : (
         <>
