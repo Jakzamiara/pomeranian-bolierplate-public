@@ -1,28 +1,42 @@
 import React, { useState } from "react";
 import { WhackMenu } from "./WhackMenu";
 import { WhackGame } from "./WhackGame";
+import { WhackCong } from "./WhackCong";
 import "./styles.css";
 
 export const WhackAMole = () => {
   const [gameStarted, setGameStarted] = useState(false);
+  const [gameEnded, setGameEnded] = useState(false);
+  const [score, setScore] = useState(0); // Dodane
   const [selectedTime, setSelectedTime] = useState(1);
   const [selectedMole, setSelectedMole] = useState(1);
+
   const handleStart = () => {
     setGameStarted(true);
+    setGameEnded(false);
   };
 
   const handleMoleSelection = (mole) => {
     setSelectedMole(mole);
   };
 
+  const handleEnd = () => {
+    setGameEnded(true);
+  };
+
   return (
     <div className="whack-a-mole-front-page">
-      <h3>
-        Gra polegająca na podążaniu za krecikiem i trafieniu na kwadrat, w
-        którym się pojawił.
-      </h3>
       {gameStarted ? (
-        <WhackGame selectedTime={selectedTime} selectedMole={selectedMole} />
+        gameEnded ? (
+          <WhackCong score={score} selectedTime={selectedTime} />
+        ) : (
+          <WhackGame
+            selectedTime={selectedTime}
+            selectedMole={selectedMole}
+            setGameEnded={setGameEnded}
+            handleEnd={handleEnd}
+          />
+        )
       ) : (
         <WhackMenu
           onStart={handleStart}

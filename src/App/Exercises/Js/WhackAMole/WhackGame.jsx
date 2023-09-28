@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MoleIcon } from "./moleicon";
 import "./styles.css";
 
-export const WhackGame = ({ selectedTime, selectedMole }) => {
+export const WhackGame = ({ selectedTime, selectedMole, handleEnd }) => {
   const [score, setScore] = useState(0);
   const [clickedCell, setClickedCell] = useState(null);
   const [cellColor, setCellColor] = useState("");
@@ -31,6 +31,9 @@ export const WhackGame = ({ selectedTime, selectedMole }) => {
       setCellColor("");
     }, 100);
   };
+  useEffect(() => {
+    if (remainingTime <= 0) handleEnd();
+  }, [remainingTime]);
 
   const handleCellClick = (index) => {
     if (remainingTime <= 0) return;
@@ -83,7 +86,9 @@ export const WhackGame = ({ selectedTime, selectedMole }) => {
         </div>
         <div className="whack-control">
           <p className="time-p">PRZYCISKI STERUJĄCE</p>
-          <button className="control-update-button">STOP</button>
+          <button className="control-update-button" onClick={handleEnd}>
+            STOP
+          </button>
         </div>
       </div>
       <div className="whack-game-map">
