@@ -1,0 +1,103 @@
+.grid-whack {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.whack-time, .whack-mole-select, .whack-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.whack-time {
+    margin-top: 56px;
+}
+.whack-mole-select {
+    margin-top: 56px;
+}
+.whack-start {
+    margin-top: 56px;
+}
+.whack-time-buttons {
+    padding-left: 145px;
+}
+.whack-mole-select-buttons {
+    padding-left: 100px;
+}
+.whack-start-buttons {
+    padding-left: 45px;
+}
+
+.whack-time-buttons, .whack-mole-select-buttons, .whack-start-buttons  {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+.grid-whack button {
+    display: flex;
+    height: 56px;
+    padding: 20px 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-secondary, #23213D);
+    background: var(--secondary-secondary, #23213D);
+    color: aliceblue;
+    min-width: 156px;
+}
+.selectedd {
+    background-color: #FE3756 !important;
+  }
+.whack-time-to-end, .whack-result, .whack-control {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 65px;
+}
+.time-update-button, .result-update-button, .control-update-button {
+    display: flex;
+    width: 163px;
+    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200, #EBEBEB);
+    background: var(--gray-200, #EBEBEB);
+}
+.control-update-button {
+    background-color: #E12B1B;
+}
+.time-update-button {
+ margin-left: 100px;
+}
+.result-update-button {
+    margin-left: 178px;
+}
+.control-update-button {
+    margin-left: 45px;
+}
+.whack-game-map {
+    display: grid;
+    grid-template-columns: repeat(5, 102px);
+    grid-template-rows: repeat(2, 102px);
+    gap: 9px 9px;
+    margin-top: 118px;
+    margin-left: 200px;
+}
+.whack-grid-map {
+    border-radius: 8px;
+    background: var(--gray-200, #EBEBEB);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.green {
+    background-color: green;
+}
+  
+.red {
+    background-color: red;
+}
+

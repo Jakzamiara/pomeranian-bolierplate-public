@@ -7,26 +7,6 @@
     display: flex;
     padding-top: 100px;
 }
-button {
-    display: flex;
-    height: 56px;
-    padding: 20px 36px;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex: 1 0 0;
-    border-radius: 8px;
-    border: 0 solid var(--secondary-secondary, #23213D);
-    background: var(--secondary-secondary, #23213D);
-    color: #FFF;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 31px;
-    min-width: 200px;
-}
 .text-row {
     display: flex;
     align-items: center;
@@ -188,5 +168,6 @@ hr {
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 8px;
   }
+
   
   
