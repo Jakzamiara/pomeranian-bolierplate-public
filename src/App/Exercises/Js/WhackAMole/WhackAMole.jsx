@@ -7,7 +7,7 @@ import "./styles.css";
 export const WhackAMole = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
-  const [score, setScore] = useState(0); // Dodane
+  const [score, setScore] = useState(0);
   const [selectedTime, setSelectedTime] = useState(1);
   const [selectedMole, setSelectedMole] = useState(1);
 
