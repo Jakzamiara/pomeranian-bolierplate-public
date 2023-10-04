@@ -13,6 +13,7 @@ import { Blog } from "./App/Blog/Blog";
 import { Faq } from "./App/Faq/Faq";
 import { TechStack } from "./App/TechStack/TechStack";
 import { CookiesBanner } from "./App/Components/CookiesBanner.jsx/CookiesBanner";
+import { LocalStorage } from "./App/LocalStorage/LocalStorage";
 
 export function App() {
   return (
@@ -31,6 +32,7 @@ export function App() {
           <Route path="Faq/*" element={<Faq />} />
           <Route path="TechStack/*" element={<TechStack />} />
           <Route path="CookiesBanner/*" element={<CookiesBanner />} />
+          <Route path="LocalStorage/*" element={<LocalStorage />} />
         </Route>
       </Routes>
     </BrowserRouter>
