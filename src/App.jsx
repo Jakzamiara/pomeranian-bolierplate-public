@@ -14,6 +14,7 @@ import { Faq } from "./App/Faq/Faq";
 import { TechStack } from "./App/TechStack/TechStack";
 import { CookiesBanner } from "./App/Components/CookiesBanner.jsx/CookiesBanner";
 import { LocalStorage } from "./App/LocalStorage/LocalStorage";
+import { Todo } from "./App/Components/Todo/Todo";
 
 export function App() {
   return (
@@ -33,6 +34,7 @@ export function App() {
           <Route path="TechStack/*" element={<TechStack />} />
           <Route path="CookiesBanner/*" element={<CookiesBanner />} />
           <Route path="LocalStorage/*" element={<LocalStorage />} />
+          <Route path="Todo/*" element={<Todo />} />
         </Route>
       </Routes>
     </BrowserRouter>

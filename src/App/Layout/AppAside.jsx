@@ -9,6 +9,7 @@ import { PersonalCardIcon } from "../Components/Icons/PersonalCardIcon";
 import "./styles/aside.css";
 import { Faq } from "../Components/Icons/Faq";
 import { LocalStorage } from "../LocalStorage/LocalStorage";
+import { Todo } from "../Components/Todo/Todo";
 
 export function AppAside() {
   return (
@@ -50,6 +51,10 @@ export function AppAside() {
           <li className="aside-row">
             <Faq />
             <NavLink to="LocalStorage">LocalStorage</NavLink>
+          </li>
+          <li className="aside-row">
+            <Faq />
+            <NavLink to="Todo">Todo</NavLink>
           </li>
         </ul>
       </nav>

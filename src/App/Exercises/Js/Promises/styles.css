@@ -1,0 +1,20 @@
+.userdetails {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.userdetails button {
+    max-width: 200px;
+    margin-left: 160px;
+    min-height: 40px;
+    text-transform: capitalize;
+    border-radius: 8px;
+border: 1px solid var(--primary-primary, #FE3756);
+background: var(--primary-primary, #FE3756)
+}
+.userdetails p {
+    font-size: 20px;
+}
+.error {
+    font-size: 20px;
+}
