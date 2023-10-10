@@ -1,12 +1,30 @@
 import { Editicon, Ticicon, Trashicon } from "./Todo-icons";
-import React, { useState } from "react";
-import "./styles.css";
+import React, { useState, useEffect } from "react";
 
 export const Todoelement = () => {
+  const [todo, setTodo] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3333/api/todo");
+        const data = await response.json();
+        setTodo(data);
+      } catch (error) {
+        console.error("There was an error!", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (!todo) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="todo-element">
       <div className="todo-control-buttons">
-        <h2 className="todo-title">Kupić spray na kleszcze</h2>
+        <h2 className="todo-title">{todo.title}</h2>
         <button className="todo-vector">
           <Ticicon />
         </button>
@@ -18,13 +36,10 @@ export const Todoelement = () => {
         </button>
       </div>
       <div className="todo-author">
-        <p className="todo-name">Wojtek</p>
-        <p className="todo-date">10.04.2024, 11:30</p>
+        <p className="todo-name">{todo.author}</p>
+        <p className="todo-date">{todo.date}</p>
       </div>
-      <p className="todo-text">
-        Pamiętać, żeby sprawdzić skład i termin ważności preparatu. Zadzwonić do
-        weta, żeby się upewnić, czy mają na stanie.
-      </p>
+      <p className="todo-text">{todo.text}</p>
     </div>
   );
 };
