@@ -29,6 +29,8 @@ export const Todo = () => {
   }, []);
 
   const handleAddSuccess = async (newTodo) => {
+    fetchData();
+    setShowTodoAdd(false);
     if (isEditing) {
       const updatedTodos = todos.map((todo) =>
         todo.id === editingTodoId ? newTodo : todo
