@@ -1,10 +1,20 @@
 import { Editicon, Ticicon, Trashicon } from "./Todo-icons";
+import axios from "axios";
 
-export const Todoelement = ({ todo }) => {
+export const Todoelement = ({ todo, onDelete }) => {
   if (!todo) {
     return <div>Loading...</div>;
   }
-  console.log(todo);
+
+  const deleteTodo = async () => {
+    try {
+      await axios.delete(`http://localhost:3333/api/todo/${todo.id}`);
+      onDelete(todo.id);
+    } catch (error) {
+      console.error("Failed to delete todo:", error);
+    }
+  };
+
   return (
     <div className="todo-element">
       <div className="todo-control-buttons">
@@ -15,7 +25,7 @@ export const Todoelement = ({ todo }) => {
         <button className="todo-edit">
           <Editicon />
         </button>
-        <button className="todo-trash">
+        <button className="todo-trash" onClick={deleteTodo}>
           <Trashicon />
         </button>
       </div>

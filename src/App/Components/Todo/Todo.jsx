@@ -25,6 +25,9 @@ export const Todo = () => {
     setTodos([...todos, newTodo]);
     setShowTodoAdd(false);
   };
+  const handleDelete = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
   return (
     <div className="app-container">
@@ -35,7 +38,7 @@ export const Todo = () => {
             <button onClick={() => setShowTodoAdd(true)}>+</button>
           </div>
           {todos.map((todo) => (
-            <Todoelement key={todo.id} todo={todo} />
+            <Todoelement key={todo.id} todo={todo} onDelete={handleDelete} />
           ))}
         </div>
       ) : (
