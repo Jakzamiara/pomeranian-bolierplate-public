@@ -28,6 +28,13 @@ export const Todoelement = ({ todo, onDelete, onEdit }) => {
     <div className="todo-element">
       <div className="todo-control-buttons">
         <h2 className="todo-title">{todo.title}</h2>
+        <div className="todo-author">
+          <p className="todo-name">{todo.author}</p>
+          <p className="todo-date">{formatDate(todo.createdAt)}</p>
+        </div>
+        <p className="todo-text">{todo.note}</p>
+      </div>
+      <div className="todo-right-side">
         <button className="todo-vector">
           <Ticicon />
         </button>
@@ -36,13 +43,8 @@ export const Todoelement = ({ todo, onDelete, onEdit }) => {
         </button>
         <button className="todo-trash" onClick={deleteTodo}>
           <Trashicon />
-        </button>
+        </button>{" "}
       </div>
-      <div className="todo-author">
-        <p className="todo-name">{todo.author}</p>
-        <p className="todo-date">{formatDate(todo.createdAt)}</p>
-      </div>
-      <p className="todo-text">{todo.note}</p>
     </div>
   );
 };

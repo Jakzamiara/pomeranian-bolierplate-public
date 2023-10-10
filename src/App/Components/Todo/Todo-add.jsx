@@ -14,7 +14,7 @@ export const Todoadd = ({ onAddSuccess, todo, isEditing, editingTodoId }) => {
 
     const currentDate = new Date().toISOString();
     const payload = {
-      id: 0, // Możesz zmienić to na aktualne ID podczas edycji
+      id: 0,
       title,
       createdAt: currentDate,
       author,
@@ -49,8 +49,10 @@ export const Todoadd = ({ onAddSuccess, todo, isEditing, editingTodoId }) => {
 
   return (
     <div className="todo-add-container">
+      <h2 className="todo-todo">TODO</h2>
+      <p className="todo-adding-exercise">Dodawanie zadania</p>
       <div className="todo-add-title">
-        <h3>Title</h3>
+        <h3>Tytuł</h3>
         <input
           type="text"
           className="todo-title-input"
@@ -59,7 +61,7 @@ export const Todoadd = ({ onAddSuccess, todo, isEditing, editingTodoId }) => {
         />
       </div>
       <div className="todo-add-author">
-        <h3>Author</h3>
+        <h3>Autor</h3>
         <input
           type="text"
           className="todo-author-input"
@@ -68,18 +70,17 @@ export const Todoadd = ({ onAddSuccess, todo, isEditing, editingTodoId }) => {
         />
       </div>
       <div className="todo-add-note">
-        <h3>Note</h3>
-        <input
-          type="text"
+        <h3>Treść</h3>
+        <textarea
           className="todo-note-input"
           value={note}
           onChange={(e) => setNote(e.target.value)}
         />
       </div>
       <div className="todo-add-buttons">
-        <button className="todo-return-button">Cancel</button>
+        <button className="todo-return-button">Cofnij</button>
         <button className="todo-add-add-button" onClick={handleSubmit}>
-          Submit
+          Dodaj
         </button>
       </div>
     </div>

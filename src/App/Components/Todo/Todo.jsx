@@ -55,7 +55,7 @@ export const Todo = () => {
           <div className="todo-add">
             <p>Tutaj znajdziesz listę swoich zadań.</p>
             <button
-              className="todo-add-button"
+              className="todo-add-buttonnn"
               onClick={() => setShowTodoAdd(true)}
             >
               +
