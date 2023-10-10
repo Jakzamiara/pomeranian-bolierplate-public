@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-export const Todoadd = () => {
+export const Todoadd = ({ onAddSuccess }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [note, setNote] = useState("");
@@ -30,6 +30,7 @@ export const Todoadd = () => {
 
       if (response.ok) {
         console.log("Data successfully sent to the server");
+        onAddSuccess(payload);
       } else {
         console.log("Failed to send data");
       }

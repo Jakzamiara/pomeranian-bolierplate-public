@@ -1,26 +1,10 @@
 import { Editicon, Ticicon, Trashicon } from "./Todo-icons";
-import React, { useState, useEffect } from "react";
 
-export const Todoelement = () => {
-  const [todo, setTodo] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3333/api/todo");
-        const data = await response.json();
-        setTodo(data);
-      } catch (error) {
-        console.error("There was an error!", error);
-      }
-    };
-    fetchData();
-  }, []);
-
+export const Todoelement = ({ todo }) => {
   if (!todo) {
     return <div>Loading...</div>;
   }
-
+  console.log(todo);
   return (
     <div className="todo-element">
       <div className="todo-control-buttons">
@@ -37,9 +21,9 @@ export const Todoelement = () => {
       </div>
       <div className="todo-author">
         <p className="todo-name">{todo.author}</p>
-        <p className="todo-date">{todo.date}</p>
+        <p className="todo-date">{todo.createdAt}</p>
       </div>
-      <p className="todo-text">{todo.text}</p>
+      <p className="todo-text">{todo.note}</p>
     </div>
   );
 };

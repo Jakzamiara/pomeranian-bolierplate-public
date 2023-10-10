@@ -1,31 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { Todoelement } from "./Todo-element";
-import { Todoadd } from "./Todo-add"; // Assuming Todoadd is in Todo-add.jsx
+import { Todoadd } from "./Todo-add";
 
 export const Todo = () => {
   const [showTodoAdd, setShowTodoAdd] = useState(false);
+  const [todos, setTodos] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:3333/api/todo");
+      const data = await response.json();
+      setTodos(data);
+    } catch (error) {
+      console.error("There was an error!", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleAddSuccess = async (newTodo) => {
+    setTodos([...todos, newTodo]);
+    setShowTodoAdd(false);
+  };
 
   return (
     <div className="app-container">
-      {!showTodoAdd && (
+      {!showTodoAdd ? (
         <div className="main-todo-view">
           <h2 className="todo-todo">TODO</h2>
           <div className="todo-add">
-            <p className="todo-intro">Tutaj znajdziesz listę swoich zadań.</p>
-            <button
-              className="todo-add-button"
-              onClick={() => setShowTodoAdd(true)}
-            >
-              +
-            </button>
+            <button onClick={() => setShowTodoAdd(true)}>+</button>
           </div>
-          <Todoelement />
-          <Todoelement />
-          <Todoelement />
+          {todos.map((todo) => (
+            <Todoelement key={todo.id} todo={todo} />
+          ))}
         </div>
+      ) : (
+        <Todoadd onAddSuccess={handleAddSuccess} />
       )}
-      {showTodoAdd && <Todoadd />}
     </div>
   );
 };

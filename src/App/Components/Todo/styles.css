@@ -104,3 +104,6 @@ line-height: 16.054px;
     display: flex;
     flex-wrap: wrap;
 }
+.completed {
+    background-color: green; /* lub inny kolor */
+  }
