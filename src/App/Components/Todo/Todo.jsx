@@ -53,7 +53,13 @@ export const Todo = () => {
         <div className="main-todo-view">
           <h2 className="todo-todo">TODO</h2>
           <div className="todo-add">
-            <button onClick={() => setShowTodoAdd(true)}>+</button>
+            <p>Tutaj znajdziesz listę swoich zadań.</p>
+            <button
+              className="todo-add-button"
+              onClick={() => setShowTodoAdd(true)}
+            >
+              +
+            </button>
           </div>
           {todos.map((todo) => (
             <Todoelement

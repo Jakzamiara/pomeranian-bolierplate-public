@@ -55,12 +55,12 @@
     background: var(--primary-primary,
      #FE3756);
      color: #FFF;
-text-align: center;
-font-family: Poppins;
-font-size: 25.893px;
-font-style: normal;
-font-weight: 500;
-line-height: 16.054px; 
+    text-align: center;
+    font-family: Poppins;
+    font-size: 25.893px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16.054px; 
 } 
 .todo-title {
     color: var(--secondary-secondary, #23213D);

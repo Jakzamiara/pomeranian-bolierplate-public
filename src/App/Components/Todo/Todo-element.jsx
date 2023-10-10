@@ -14,6 +14,15 @@ export const Todoelement = ({ todo, onDelete, onEdit }) => {
       console.error("Failed to delete todo:", error);
     }
   };
+  const formatDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    return `${day}.${month}.${year}, ${hours}.${minutes}`;
+  };
 
   return (
     <div className="todo-element">
@@ -31,7 +40,7 @@ export const Todoelement = ({ todo, onDelete, onEdit }) => {
       </div>
       <div className="todo-author">
         <p className="todo-name">{todo.author}</p>
-        <p className="todo-date">{todo.createdAt}</p>
+        <p className="todo-date">{formatDate(todo.createdAt)}</p>
       </div>
       <p className="todo-text">{todo.note}</p>
     </div>
