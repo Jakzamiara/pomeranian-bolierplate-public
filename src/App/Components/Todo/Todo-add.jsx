@@ -7,6 +7,11 @@ export const Todoadd = ({ onAddSuccess }) => {
   const [note, setNote] = useState("");
 
   const handleSubmit = async () => {
+    if (!title || !author || !note) {
+      alert("All fields must be filled out");
+      return;
+    }
+
     const currentDate = new Date().toISOString();
 
     const payload = {
