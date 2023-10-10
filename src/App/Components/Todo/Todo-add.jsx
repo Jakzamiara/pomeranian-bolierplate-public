@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-export const Todoadd = ({ onAddSuccess }) => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [note, setNote] = useState("");
+export const Todoadd = ({ onAddSuccess, todo, isEditing, editingTodoId }) => {
+  const [title, setTitle] = useState(todo ? todo.title : "");
+  const [author, setAuthor] = useState(todo ? todo.author : "");
+  const [note, setNote] = useState(todo ? todo.note : "");
 
   const handleSubmit = async () => {
     if (!title || !author || !note) {
@@ -13,9 +13,8 @@ export const Todoadd = ({ onAddSuccess }) => {
     }
 
     const currentDate = new Date().toISOString();
-
     const payload = {
-      id: 0,
+      id: 0, // Możesz zmienić to na aktualne ID podczas edycji
       title,
       createdAt: currentDate,
       author,
@@ -24,9 +23,14 @@ export const Todoadd = ({ onAddSuccess }) => {
       doneDate: currentDate,
     };
 
+    const url = isEditing
+      ? `http://localhost:3333/api/todo/${editingTodoId}`
+      : "http://localhost:3333/api/todo";
+    const method = isEditing ? "PUT" : "POST";
+
     try {
-      const response = await fetch("http://localhost:3333/api/todo", {
-        method: "POST",
+      const response = await fetch(url, {
+        method,
         headers: {
           "Content-Type": "application/json",
         },
@@ -34,7 +38,6 @@ export const Todoadd = ({ onAddSuccess }) => {
       });
 
       if (response.ok) {
-        console.log("Data successfully sent to the server");
         onAddSuccess(payload);
       } else {
         console.log("Failed to send data");

@@ -1,7 +1,7 @@
 import { Editicon, Ticicon, Trashicon } from "./Todo-icons";
 import axios from "axios";
 
-export const Todoelement = ({ todo, onDelete }) => {
+export const Todoelement = ({ todo, onDelete, onEdit }) => {
   if (!todo) {
     return <div>Loading...</div>;
   }
@@ -22,7 +22,7 @@ export const Todoelement = ({ todo, onDelete }) => {
         <button className="todo-vector">
           <Ticicon />
         </button>
-        <button className="todo-edit">
+        <button className="todo-edit" onClick={() => onEdit(todo.id)}>
           <Editicon />
         </button>
         <button className="todo-trash" onClick={deleteTodo}>

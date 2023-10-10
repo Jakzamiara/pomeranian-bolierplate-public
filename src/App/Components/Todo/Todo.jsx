@@ -4,8 +4,15 @@ import { Todoelement } from "./Todo-element";
 import { Todoadd } from "./Todo-add";
 
 export const Todo = () => {
+  const [isEditing, setIsEditing] = useState(false);
   const [showTodoAdd, setShowTodoAdd] = useState(false);
   const [todos, setTodos] = useState([]);
+  const [editingTodoId, setEditingTodoId] = useState(null);
+  const startEditing = (id) => {
+    setEditingTodoId(id);
+    setIsEditing(true);
+    setShowTodoAdd(true);
+  };
 
   const fetchData = async () => {
     try {
@@ -22,7 +29,16 @@ export const Todo = () => {
   }, []);
 
   const handleAddSuccess = async (newTodo) => {
-    setTodos([...todos, newTodo]);
+    if (isEditing) {
+      const updatedTodos = todos.map((todo) =>
+        todo.id === editingTodoId ? newTodo : todo
+      );
+      setTodos(updatedTodos);
+      setIsEditing(false);
+      setEditingTodoId(null);
+    } else {
+      setTodos([...todos, newTodo]);
+    }
     setShowTodoAdd(false);
   };
   const handleDelete = (id) => {
@@ -38,11 +54,21 @@ export const Todo = () => {
             <button onClick={() => setShowTodoAdd(true)}>+</button>
           </div>
           {todos.map((todo) => (
-            <Todoelement key={todo.id} todo={todo} onDelete={handleDelete} />
+            <Todoelement
+              key={todo.id}
+              todo={todo}
+              onDelete={handleDelete}
+              onEdit={startEditing}
+            />
           ))}
         </div>
       ) : (
-        <Todoadd onAddSuccess={handleAddSuccess} />
+        <Todoadd
+          onAddSuccess={handleAddSuccess}
+          todo={todos.find((t) => t.id === editingTodoId)}
+          isEditing={isEditing}
+          editingTodoId={editingTodoId}
+        />
       )}
     </div>
   );
