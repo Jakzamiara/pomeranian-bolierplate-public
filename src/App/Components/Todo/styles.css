@@ -26,7 +26,7 @@
     max-width: 1000px;
     height: auto;
     padding: 18px 24px;
-    border-radius: 25px;
+    border-radius: 50px;
     border-left: 5px solid var(--gray-300, #C8CBD1);
     background: var(--background-bg-primary, #FFF);
     box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.15), 0px 2px 28px 0px rgba(0, 0, 0, 0.12);
@@ -192,3 +192,11 @@
     align-items: center;
     gap: 10px;
 }
+.todo-author p {
+    display: flex;
+    margin-block-start: 0px;
+    margin-block-end: 5px;
+}
+.done {
+    background-color: grey !important;
+  }

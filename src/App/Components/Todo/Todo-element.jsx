@@ -1,14 +1,20 @@
-import { Editicon, Ticicon, Trashicon } from "./Todo-icons";
+import { Editicon, Greentic, Ticicon, Trashicon } from "./Todo-icons";
 import axios from "axios";
+import React, { useState } from "react";
 
 export const Todoelement = ({ todo, onDelete, onEdit }) => {
+  const [isDone, setIsDone] = useState(false);
   if (!todo) {
     return <div>Loading...</div>;
   }
+  const handleTicClick = () => {
+    setIsDone(true);
+    console.log("isDone");
+  };
 
   const deleteTodo = async () => {
     try {
-      await axios.delete(`http://localhost:3333/api/todo/${todo.id}`);
+      await axios.delete(`htt+://localhost:3333/api/todo/${todo.id}`);
       onDelete(todo.id);
     } catch (error) {
       console.error("Failed to delete todo:", error);
@@ -25,17 +31,20 @@ export const Todoelement = ({ todo, onDelete, onEdit }) => {
   };
 
   return (
-    <div className="todo-element">
+    <div className={`todo-element ${isDone ? "done" : ""}`}>
       <div className="todo-control-buttons">
-        <h2 className="todo-title">{todo.title}</h2>
+        <h2 className="todo-title">
+          {todo.title}
+          <Greentic />
+        </h2>
         <div className="todo-author">
-          <span className="todo-name">{todo.author}</span>
-          <span className="todo-date">{formatDate(todo.createdAt)}</span>
+          <p className="todo-name">{todo.author}</p>
+          <p className="todo-date">{formatDate(todo.createdAt)}</p>
         </div>
         <p className="todo-text">{todo.note}</p>
       </div>
       <div className="todo-right-side">
-        <button className="todo-vector">
+        <button className="todo-vector" onClick={handleTicClick}>
           <Ticicon />
         </button>
         <button className="todo-edit" onClick={() => onEdit(todo.id)}>
@@ -44,6 +53,8 @@ export const Todoelement = ({ todo, onDelete, onEdit }) => {
         <button className="todo-trash" onClick={deleteTodo}>
           <Trashicon />
         </button>{" "}
+        <Greentic />
+        <p>dawfswza\fasfawfawfawfaw</p>
       </div>
     </div>
   );
