@@ -43,7 +43,7 @@ export const Todo = () => {
 
   const handleDelete = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
-    fetchData(); // Opcjonalnie, można też odświeżyć dane po usunięciu
+    fetchData();
   };
 
   return (
@@ -70,7 +70,7 @@ export const Todo = () => {
               />
             ))
           ) : (
-            <Todocongrats />
+            <Todocongrats onAddButtonClick={() => setShowTodoAdd(true)} />
           )}
         </div>
       ) : (
@@ -82,6 +82,12 @@ export const Todo = () => {
           onReturn={handleReturn}
         />
       )}
+      <button
+        className="todo-add-button-down"
+        onClick={() => setShowTodoAdd(true)}
+      >
+        DODAJ
+      </button>
     </div>
   );
 };
