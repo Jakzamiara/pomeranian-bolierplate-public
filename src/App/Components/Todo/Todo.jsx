@@ -23,6 +23,9 @@ export const Todo = () => {
       console.error("There was an error!", error);
     }
   };
+  const handleReturn = () => {
+    setShowTodoAdd(false);
+  };
 
   useEffect(() => {
     fetchData();
@@ -76,6 +79,7 @@ export const Todo = () => {
           todo={todos.find((t) => t.id === editingTodoId)}
           isEditing={isEditing}
           editingTodoId={editingTodoId}
+          onReturn={handleReturn}
         />
       )}
     </div>

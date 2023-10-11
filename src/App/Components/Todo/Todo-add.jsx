@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-export const Todoadd = ({ onAddSuccess, todo, isEditing, editingTodoId }) => {
+export const Todoadd = ({
+  onAddSuccess,
+  todo,
+  isEditing,
+  editingTodoId,
+  onReturn,
+}) => {
   const [title, setTitle] = useState(todo ? todo.title : "");
   const [author, setAuthor] = useState(todo ? todo.author : "");
   const [note, setNote] = useState(todo ? todo.note : "");
@@ -78,7 +84,9 @@ export const Todoadd = ({ onAddSuccess, todo, isEditing, editingTodoId }) => {
         />
       </div>
       <div className="todo-add-buttons">
-        <button className="todo-return-button">Cofnij</button>
+        <button className="todo-return-button" onClick={onReturn}>
+          Cofnij
+        </button>
         <button className="todo-add-add-button" onClick={handleSubmit}>
           Dodaj
         </button>
