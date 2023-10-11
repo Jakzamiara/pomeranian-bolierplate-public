@@ -157,7 +157,7 @@
 }
 .todo-note-input {
     display: flex;
-    height: 140px;
+    height: 143px;
     padding: 13px 16px;
     gap: 10px;
     align-self: stretch; 
@@ -186,4 +186,9 @@
 .todo-author {
     margin: 40px 0;
     font-weight: bold;
+}
+.todo-authot-headline {
+   display: flex;
+    align-items: center;
+    gap: 10px;
 }

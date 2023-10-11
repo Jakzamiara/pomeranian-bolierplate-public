@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+import { CrownEmo, HappyEmo, WriteEmo } from "./Todo-icons";
 
 export const Todoadd = ({
   onAddSuccess,
@@ -17,6 +18,12 @@ export const Todoadd = ({
       alert("All fields must be filled out");
       return;
     }
+    const handleReset = () => {
+      setTitle("");
+      setAuthor("");
+      setNote("");
+      onReturn();
+    };
 
     const currentDate = new Date().toISOString();
     const payload = {
@@ -58,9 +65,11 @@ export const Todoadd = ({
       <h2 className="todo-todo">TODO</h2>
       <p className="todo-adding-exercise">Dodawanie zadania</p>
       <div className="todo-add-title">
-        <h3>Tytuł</h3>
+        <h3 className="todo-authot-headline">
+          Tytuł <CrownEmo />
+        </h3>
         <input
-          placeholder="Put your title here"
+          placeholder="Twój tytuł."
           type="text"
           className="todo-title-input"
           value={title}
@@ -68,9 +77,11 @@ export const Todoadd = ({
         />
       </div>
       <div className="todo-add-author">
-        <h3>Autor</h3>
+        <h3 className="todo-authot-headline">
+          Autor {"   "} <HappyEmo />
+        </h3>
         <input
-          placeholder="Put your name here"
+          placeholder="Imie autora."
           type="text"
           className="todo-author-input"
           value={author}
@@ -78,9 +89,12 @@ export const Todoadd = ({
         />
       </div>
       <div className="todo-add-note">
-        <h3>Treść</h3>
+        <h3 className="todo-authot-headline">
+          Treść
+          <WriteEmo />{" "}
+        </h3>
         <textarea
-          placeholder="Put your chores in here"
+          placeholder="Opisz swoje zadanie."
           className="todo-note-input"
           value={note}
           onChange={(e) => setNote(e.target.value)}
