@@ -60,6 +60,7 @@ export const Todoadd = ({
       <div className="todo-add-title">
         <h3>Tytuł</h3>
         <input
+          placeholder="Put your title here"
           type="text"
           className="todo-title-input"
           value={title}
@@ -69,6 +70,7 @@ export const Todoadd = ({
       <div className="todo-add-author">
         <h3>Autor</h3>
         <input
+          placeholder="Put your name here"
           type="text"
           className="todo-author-input"
           value={author}
@@ -78,6 +80,7 @@ export const Todoadd = ({
       <div className="todo-add-note">
         <h3>Treść</h3>
         <textarea
+          placeholder="Put your chores in here"
           className="todo-note-input"
           value={note}
           onChange={(e) => setNote(e.target.value)}

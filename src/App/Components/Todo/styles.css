@@ -81,6 +81,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .todo-add-title, .todo-add-author, .todo-add-note {
     margin-top: 40px;
     display: flex;
@@ -88,6 +89,7 @@
     align-items: flex-start;
     gap: 6px;
     align-self: stretch;
+
 }
 .todo-add-buttons {
     margin-top: 40px;
@@ -124,7 +126,9 @@
     max-width: 133px;
     margin-left: 10px;
 }
-
+.todo-author-input, .todo-note-input, .todo-title-input {
+    font-size: 16px;
+}
 .todo-title-input {
     display: flex;
     height: 48px;
@@ -137,6 +141,7 @@
     background: #FFF;
     width: 456px;
 }
+
 .todo-author-input {
     display: flex;
     height: 48px;
@@ -148,10 +153,11 @@
     border: 1px solid var(--grey-300, #C8CBD1);
     background: #FFF;
     max-width: 456px;
+
 }
 .todo-note-input {
     display: flex;
-    height: 120px;
+    height: 140px;
     padding: 13px 16px;
     gap: 10px;
     align-self: stretch; 
@@ -168,6 +174,7 @@
     align-items: flex-start;
     gap: 0px;  
     align-self: stretch;
+    
 }
 .todo-element {
     display: flex;
