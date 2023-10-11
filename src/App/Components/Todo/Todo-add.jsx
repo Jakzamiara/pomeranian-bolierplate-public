@@ -18,13 +18,6 @@ export const Todoadd = ({
       alert("All fields must be filled out");
       return;
     }
-    const handleReset = () => {
-      setTitle("");
-      setAuthor("");
-      setNote("");
-      onReturn();
-    };
-
     const currentDate = new Date().toISOString();
     const payload = {
       id: 0,
