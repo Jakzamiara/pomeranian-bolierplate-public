@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import { Todoelement } from "./Todoelement";
+import { Todoelement } from "./Todo-element";
 import { Todoadd } from "./Todo-add";
 
 export const Todo = () => {
