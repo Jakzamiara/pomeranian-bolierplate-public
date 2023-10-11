@@ -82,12 +82,14 @@ export const Todo = () => {
           onReturn={handleReturn}
         />
       )}
-      <button
-        className="todo-add-button-down"
-        onClick={() => setShowTodoAdd(true)}
-      >
-        DODAJ
-      </button>
+      {todos.length > 0 && !showTodoAdd && (
+        <button
+          className="todo-add-button-down"
+          onClick={() => setShowTodoAdd(true)}
+        >
+          DODAJ
+        </button>
+      )}
     </div>
   );
 };

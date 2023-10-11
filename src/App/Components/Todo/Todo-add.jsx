@@ -28,7 +28,6 @@ export const Todoadd = ({
       note,
       doneDate: currentDate,
     };
-
     const url = isEditing
       ? `http://localhost:3333/api/todo/${editingTodoId}`
       : "http://localhost:3333/api/todo";
