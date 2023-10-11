@@ -11,6 +11,7 @@
     margin-bottom: 22px;
     
 }
+
 .todo-add {
     display: flex;
     align-items: center;
@@ -210,3 +211,32 @@
     display: flex;
     margin-top: 60px;
 }
+.todo-congrats-container {
+    margin-left: 100px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+.todo-congrats-text {
+    color: var(--black-black, #000);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px; 
+}
+.todo-congrats-add {
+    display: flex;
+    width: 326px;
+    align-items: flex-start; 
+    display: flex;
+    width: 326px;
+    align-items: flex-start;
+    gap: 16px;
+    flex-shrink: 0;
+    background-color: #FE3756;
+    height: 56px;
+    }

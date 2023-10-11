@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { Todoelement } from "./Todo-element";
 import { Todoadd } from "./Todo-add";
+import { Todocongrats } from "./Todo-congrats";
 
 export const Todo = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [showTodoAdd, setShowTodoAdd] = useState(false);
   const [todos, setTodos] = useState([]);
   const [editingTodoId, setEditingTodoId] = useState(null);
+
   const startEditing = (id) => {
     setEditingTodoId(id);
     setIsEditing(true);
@@ -23,6 +25,7 @@ export const Todo = () => {
       console.error("There was an error!", error);
     }
   };
+
   const handleReturn = () => {
     setShowTodoAdd(false);
   };
@@ -31,23 +34,16 @@ export const Todo = () => {
     fetchData();
   }, []);
 
-  const handleAddSuccess = async (newTodo) => {
-    fetchData();
+  const handleAddSuccess = async () => {
+    await fetchData();
     setShowTodoAdd(false);
-    if (isEditing) {
-      const updatedTodos = todos.map((todo) =>
-        todo.id === editingTodoId ? newTodo : todo
-      );
-      setTodos(updatedTodos);
-      setIsEditing(false);
-      setEditingTodoId(null);
-    } else {
-      setTodos([...todos, newTodo]);
-    }
-    setShowTodoAdd(false);
+    setIsEditing(false);
+    setEditingTodoId(null);
   };
+
   const handleDelete = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+    fetchData(); // Opcjonalnie, można też odświeżyć dane po usunięciu
   };
 
   return (
@@ -64,14 +60,18 @@ export const Todo = () => {
               +
             </button>
           </div>
-          {todos.map((todo) => (
-            <Todoelement
-              key={todo.id}
-              todo={todo}
-              onDelete={handleDelete}
-              onEdit={startEditing}
-            />
-          ))}
+          {todos.length > 0 ? (
+            todos.map((todo) => (
+              <Todoelement
+                key={todo.id}
+                todo={todo}
+                onDelete={handleDelete}
+                onEdit={startEditing}
+              />
+            ))
+          ) : (
+            <Todocongrats />
+          )}
         </div>
       ) : (
         <Todoadd
