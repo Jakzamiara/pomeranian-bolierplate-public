@@ -29,8 +29,8 @@ export const Todoelement = ({ todo, onDelete, onEdit }) => {
       <div className="todo-control-buttons">
         <h2 className="todo-title">{todo.title}</h2>
         <div className="todo-author">
-          <p className="todo-name">{todo.author}</p>
-          <p className="todo-date">{formatDate(todo.createdAt)}</p>
+          <span className="todo-name">{todo.author}</span>
+          <span className="todo-date">{formatDate(todo.createdAt)}</span>
         </div>
         <p className="todo-text">{todo.note}</p>
       </div>

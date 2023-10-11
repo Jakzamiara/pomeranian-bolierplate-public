@@ -42,9 +42,11 @@
     flex-direction: row;
 
 }
-.todo-text {
-    
+.todo-text {   
     flex-wrap: wrap;
+}
+.todo-title {
+    font-size: 26px;
 }
 .todo-vector, .todo-edit, .todo-trash{
     background-color: transparent;
@@ -166,4 +168,15 @@
     align-items: flex-start;
     gap: 0px;  
     align-self: stretch;
+}
+.todo-element {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 150px;
+    gap: 0px;  
+    font-size: larger;
+}
+.todo-author {
+    margin: 40px 0;
+    font-weight: bold;
 }
