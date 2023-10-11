@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
-import { CrownEmo, Greentic, HappyEmo, WriteEmo } from "./Todo-icons";
+import { CrownEmo, HappyEmo, WriteEmo } from "./Todo-icons";
 
 export const Todoadd = ({
   onAddSuccess,
