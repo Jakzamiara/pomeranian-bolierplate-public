@@ -1,10 +1,28 @@
 import { Editicon, Greentic, Ticicon, Trashicon } from "./Todo-icons";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const Todoelement = ({ todo, onDelete, onEdit }) => {
-  const [isDone, setIsDone] = useState(false);
-  const [doneDate, setDoneDate] = useState(null);
+  // Initialize isDone and doneDate from local storage or set to defaults
+  const [isDone, setIsDone] = useState(() => {
+    const savedIsDone = localStorage.getItem(`todo-${todo.id}-isDone`);
+    return savedIsDone ? JSON.parse(savedIsDone) : false;
+  });
+
+  const [doneDate, setDoneDate] = useState(() => {
+    const savedDate = localStorage.getItem(`todo-${todo.id}-doneDate`);
+    return savedDate ? new Date(savedDate) : null;
+  });
+
+  useEffect(() => {
+    // Save isDone and doneDate to local storage whenever they change
+    localStorage.setItem(`todo-${todo.id}-isDone`, JSON.stringify(isDone));
+    if (doneDate) {
+      localStorage.setItem(`todo-${todo.id}-doneDate`, doneDate.toISOString());
+    } else {
+      localStorage.removeItem(`todo-${todo.id}-doneDate`);
+    }
+  }, [isDone, doneDate, todo.id]);
 
   const handleTicClick = () => {
     setIsDone(!isDone);
